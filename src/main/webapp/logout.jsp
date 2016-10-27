@@ -19,8 +19,11 @@
             
         </header>
         <article>
-            <h3>Log Out?</h3>
-            <input type="submit" value="Logout">
+            <h3>Log Out</h3>
+            <form method="POST" action="Logout">
+                <h4>Are you sure you want to log out?</h4>
+                <input type="submit" value="Logout">
+            </form>
         </article>
         <footer>
             <ul>
