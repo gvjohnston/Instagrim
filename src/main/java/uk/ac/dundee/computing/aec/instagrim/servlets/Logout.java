@@ -28,12 +28,8 @@ import uk.ac.dundee.computing.aec.instagrim.stores.LoggedIn;
 @WebServlet(name = "Logout", urlPatterns = {"/Logout","/Logout/*"})
 public class Logout extends HttpServlet {
 
-    Cluster cluster=null;
+      public void init(ServletConfig config) throws ServletException {
 
-
-    public void init(ServletConfig config) throws ServletException {
-        // TODO Auto-generated method stub
-        cluster = CassandraHosts.getCluster();
     }
 
     /**
@@ -44,44 +40,25 @@ public class Logout extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            String username=request.getParameter("username");
-            String password=request.getParameter("password");
-            //Assumes doPost receives username and password from existing connection. Could not test.
-                        
-            HttpSession session=request.getSession();
-            session.removeAttribute(username);
-            session.invalidate();
-            // HttpSession should have now terminated the session belonging to "username"
-                           
-            LoggedIn lg= new LoggedIn();
-            lg.setUsername(username);
-            lg.setLogedout();
-            //request.setAttribute("LoggedIn", lg);
-            
-            //Logedin boolean for LoggedIn object for "Username" should be set to false now
-            
-            session.setAttribute("LoggedIn", lg);
-            //System.out.println("Session in servlet "+session);
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-			rd.forward(request,response);
-//        
-//        Assumed to always work so failure condition bellow commented out
-//        }else{
-//            response.sendRedirect("/Instagrim/logout.jsp");
-//        }
-        
-        
-    }
+                HttpSession session=request.getSession();
+                session.removeAttribute("LoggedIn");
+                
+                RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+                    rd.forward(request,response);
+                
+}
 
     /**
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description
      */
+    
     @Override
     public String getServletInfo() {
         return "Short description";
