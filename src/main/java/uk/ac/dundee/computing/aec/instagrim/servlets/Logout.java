@@ -48,8 +48,10 @@ public class Logout extends HttpServlet {
                 HttpSession session=request.getSession();
                 session.removeAttribute("LoggedIn");
                 
-                RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-                    rd.forward(request,response);
+                response.sendRedirect("/Instagrim/");
+                
+//                RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+//                    rd.forward(request,response);
                 
 }
 
