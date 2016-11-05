@@ -72,7 +72,7 @@ public class Login extends HttpServlet {
             
             session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
-            RequestDispatcher rd=request.getRequestDispatcher("Instagrim/Index");
+            RequestDispatcher rd=request.getRequestDispatcher("/");
 	    rd.forward(request,response);
             
         }else{
