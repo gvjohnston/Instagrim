@@ -43,6 +43,13 @@ public class Register extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+        RequestDispatcher rd = request.getRequestDispatcher("Instagrim/Register");
+        rd.forward(request,response);
+    }
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String username=request.getParameter("username");

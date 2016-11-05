@@ -40,7 +40,13 @@ public class Logout extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
     
+        RequestDispatcher rd = request.getRequestDispatcher("Instagrim/logout.jsp");
+        rd.forward(request,response);
+    }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -49,11 +55,7 @@ public class Logout extends HttpServlet {
                 session.removeAttribute("LoggedIn");
                 
                 response.sendRedirect("/Instagrim/");
-                
-//                RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-//                    rd.forward(request,response);
-                
-}
+    }
 
     /**
      * Returns a short description of the servlet.
@@ -64,6 +66,6 @@ public class Logout extends HttpServlet {
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

@@ -48,7 +48,7 @@ public class Login extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-        RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("Instagrim/login.jsp");
         rd.forward(request,response);
     }
     
@@ -72,7 +72,7 @@ public class Login extends HttpServlet {
             
             session.setAttribute("LoggedIn", lg);
             System.out.println("Session in servlet "+session);
-            RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("Instagrim/Index");
 	    rd.forward(request,response);
             
         }else{
