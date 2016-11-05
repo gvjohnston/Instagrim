@@ -45,6 +45,14 @@ public class Login extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+    
+        RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+        rd.forward(request,response);
+    }
+    
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -68,7 +76,7 @@ public class Login extends HttpServlet {
 	    rd.forward(request,response);
             
         }else{
-            response.sendRedirect("/Instagrim/login.jsp");
+            response.sendRedirect("/Instagrim/Login");
         }
         
     }
