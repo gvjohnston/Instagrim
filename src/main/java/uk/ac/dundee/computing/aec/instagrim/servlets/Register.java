@@ -46,7 +46,7 @@ public class Register extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-        RequestDispatcher rd = request.getRequestDispatcher("Instagrim/Register");
+        RequestDispatcher rd = request.getRequestDispatcher("/register.jsp");
         rd.forward(request,response);
     }
     @Override

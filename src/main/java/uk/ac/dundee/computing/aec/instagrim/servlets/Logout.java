@@ -44,7 +44,7 @@ public class Logout extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-        RequestDispatcher rd = request.getRequestDispatcher("Instagrim/logout.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/logout.jsp");
         rd.forward(request,response);
     }
     @Override
@@ -54,7 +54,7 @@ public class Logout extends HttpServlet {
                 HttpSession session=request.getSession();
                 session.removeAttribute("LoggedIn");
                 
-                response.sendRedirect("/Instagrim/");
+                response.sendRedirect("/Instagrim");
     }
 
     /**

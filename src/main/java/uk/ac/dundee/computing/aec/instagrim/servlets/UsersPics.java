@@ -34,7 +34,7 @@ public class UsersPics extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     
-        RequestDispatcher rd = request.getRequestDispatcher("Instagrim/UserPics.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/UsersPics.jsp");
         rd.forward(request,response);
     }
 }
