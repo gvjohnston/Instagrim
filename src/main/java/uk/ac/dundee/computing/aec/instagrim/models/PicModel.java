@@ -167,8 +167,7 @@ public class PicModel {
             ResultSet rs = null;
             PreparedStatement ps = null;
          
-            if (image_type == Convertors.DISPLAY_IMAGE) {
-                
+            if (image_type == Convertors.DISPLAY_IMAGE) {                
                 ps = session.prepare("select image,imagelength,type from pics where picid =?");
             } else if (image_type == Convertors.DISPLAY_THUMB) {
                 ps = session.prepare("select thumb,imagelength,thumblength,type from pics where picid =?");

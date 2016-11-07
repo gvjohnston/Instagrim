@@ -96,7 +96,7 @@ public final class Keyspaces {
             session.close();
 
         } catch (Exception et) {
-            System.out.println("Other keyspace or coulm definition error" + et);
+            System.out.println("Other keyspace or coulmn definition error" + et);
         }
 
     }

@@ -47,7 +47,7 @@
         <a href="/Instagrim/Image/<%=p.getSUUID()%>" ><img src="/Instagrim/Thumb/<%=p.getSUUID()%>"></a><br/><%
 
             }
-            }
+        }
         %>
         </article>
         <footer>
